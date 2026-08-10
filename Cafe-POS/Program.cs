@@ -1,3 +1,6 @@
+using Cafe_POS.Interfaces;
+using Cafe_POS.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
@@ -12,7 +15,7 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    
+
 app.MapGet("/", () => "Hello World!");
 
 app.Run();

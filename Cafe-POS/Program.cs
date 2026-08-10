@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/HoMe/Error");
+    app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 app.UseStaticFiles();

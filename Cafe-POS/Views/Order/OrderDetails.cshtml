@@ -3,19 +3,25 @@
 @{
     ViewData["Title"] = "Order Details";
 }
+<div><a asp-controller="Home" asp-action="Index">Back</a></div>
+
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Order @Model.OrderId</h4>
+    <h4>Order #@Model.OrderId</h4>
     <hr/>
+    <h4>@Model.Server.FirstName</h4>
+    <h4>@Model.OrderDate</h4>
+</div>
+<div>
+    <ul>
+         @foreach (var item in @Model.OrderItems){
+            <li>@item.ItemPrice.Item.ItemName</li>
+        }
+    </ul>
+</div>
+<div>
     <dl>
-
-        <dt>Server ID</dt>
-        <dd>@Model.ServerId</dd>
-
-        <dt>Order Date</dt>
-        <dd>@Model.OrderDate</dd>
-        
         <dt>Subtotal</dt>
         <dd>@Model.SubTotal</dd>
 
@@ -26,3 +32,12 @@
         <dd>@Model.AmountDue</dd>
     </dl>
 </div>
+<div>
+    <a asp-controller="Order" asp-action="AddItems">Add Items To Order</a>
+</div>
+<div>
+    <a asp-controller="Order" asp-action="ProcessPayment">Process Payment</a>
+</div>
+   
+    
+

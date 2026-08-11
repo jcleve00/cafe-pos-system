@@ -11,7 +11,7 @@
         {
             <li>
                 Order #@order.OrderId
-                <a asp-controller="Order" asp-action="Details" asp-route-id="@order.OrderId">view</a>
+                <a asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@order.OrderId">view</a>
             </li>
         }
     </ul>

@@ -1,0 +1,28 @@
+@model Cafe_POS.Models.CafeOrder
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Order @Model.OrderId</h4>
+    <hr/>
+    <dl>
+
+        <dt>Server ID</dt>
+        <dd>@Model.ServerId</dd>
+
+        <dt>Order Date</dt>
+        <dd>@Model.OrderDate</dd>
+        
+        <dt>Subtotal</dt>
+        <dd>@Model.SubTotal</dd>
+
+        <dt>Tax</dt>
+        <dd>@Model.Tax</dd>
+
+        <dt>Amount Due</dt>
+        <dd>@Model.AmountDue</dd>
+    </dl>
+</div>

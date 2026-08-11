@@ -21,4 +21,10 @@ public class HomeController : Controller
         //Hand that list to the matching view
         return View(openOrders);
     }
+    
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
 }

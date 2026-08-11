@@ -47,6 +47,7 @@ public class OrderRepository : IOrderRepository
             .Include(oi => oi.OrderItems)
             .ThenInclude(p => p.ItemPrice)
             .ThenInclude(i => i.Item)
+            .Include(s => s.Server)
             .FirstOrDefault(o => o.OrderId == orderId);
 
         if (order == null)

@@ -4,11 +4,12 @@
 @{
     ViewData["Title"] = "Create New Order";
 }
+<div><a asp-controller="Home" asp-action="Index">Back</a></div>
 
 <h1>@ViewData["Title"]</h1>
 
 <h2>Active Servers</h2>
-
+<div>
     <ul>
         @foreach (var server in Model)
         {
@@ -18,3 +19,5 @@
             </li>
         }
     </ul>
+</div>
+    

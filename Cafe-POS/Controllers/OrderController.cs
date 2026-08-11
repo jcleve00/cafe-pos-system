@@ -33,6 +33,7 @@ public class OrderController : Controller
     }
     public IActionResult OrderDetails(int orderId)
     {
+        // Get details of order and pass to OrderDetails View
         var order = _orderRepository.GetOrderDetails(orderId);
 
         return View(order);

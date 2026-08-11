@@ -47,4 +47,19 @@ public class ItemRepository : IItemRepository
         }
         return 0;
     }
+
+    public IEnumerable<Item> GetAvailableItems(DateTime orderTime)
+    {
+        DateOnly orderDate = DateOnly.FromDateTime(orderTime);
+        int TimeOfDayId = GetTimeOfDayId(orderTime);
+
+
+        //Keeps items only if at least one price row matches the current time of day and date range
+        return _dbContext.Items
+            .Where(i => i.ItemPrices.Any(ip =>
+                ip.TimeOfDayId == TimeOfDayId &&
+                ip.StartDate <= orderDate &&
+                (ip.EndDate == null || ip.EndDate >= orderDate)))
+            .ToList();
+    }
 }

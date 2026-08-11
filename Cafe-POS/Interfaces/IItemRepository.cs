@@ -7,4 +7,5 @@ public interface IItemRepository
 {
     ItemPrice GetItemPrice(int itemId, DateOnly orderDate, int timeOfDayId);
     int GetTimeOfDayId(DateTime orderTime);
+    IEnumerable<Item> GetAvailableItems(DateTime orderTime);
 }

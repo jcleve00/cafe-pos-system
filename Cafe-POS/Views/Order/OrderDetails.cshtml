@@ -15,8 +15,8 @@
 </div>
 <div>
     <ul>
-         @foreach (var item in @Model.OrderItems){
-            <li>@item.ItemPrice.Item.ItemName</li>
+         @foreach (var item in Model.OrderItems){
+            <li>@item.Quantity - @item.ItemPrice.Item.ItemName</li>
         }
     </ul>
 </div>
@@ -33,7 +33,7 @@
     </dl>
 </div>
 <div>
-    <a asp-controller="Order" asp-action="AddItems">Add Items To Order</a>
+    <a asp-controller="Item" asp-action="AddItems" asp-route-orderId="@Model.OrderId">Add Items To Order</a>
 </div>
 <div>
     <a asp-controller="Order" asp-action="ProcessPayment">Process Payment</a>

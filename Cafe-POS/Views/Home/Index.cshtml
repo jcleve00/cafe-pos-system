@@ -1,0 +1,17 @@
+@model IEnumerable<Cafe_POS.Models.CafeOrder>
+
+    <h1>Home</h1>
+
+    <a asp-controller="Order" asp-action="Create">Create New Order</a>
+
+    <h2>Active Orders</h2>
+
+    <ul>
+        @foreach (var order in Model)
+        {
+            <li>
+                Order #@order.OrderId
+                <a asp-controller="Order" asp-action="Details" asp-route-id="@order.OrderId">view</a>
+            </li>
+        }
+    </ul>

@@ -8,7 +8,7 @@
 <div><a class="back-btn" asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
 
 <h2>@ViewBag.Title</h2>
-
+<hr />
 <div class="payment-list-container">
     <ul class="payment-list">
         @foreach (var paymentType in Model)

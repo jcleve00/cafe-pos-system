@@ -205,4 +205,33 @@ h4 {
     align-items: center;
     margin-bottom: 16px;
     padding: 12px 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size:1rem;
+}
+.menu-container {
+    text-align:center;
+}
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    list-style: none;
+}
+.menu li {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size:1rem;
+    padding: 8px, 12px;
+    margin: 0;
+    width: 100%;
+}
+
+.quantity {
+    width: 10ch;
+}
+
+/*-------------Responsive Rules-----------*/
+@media (max-width:600px){
+    .menu {
+        grid-template-columns: 1fr;
+    }
 }

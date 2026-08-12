@@ -18,7 +18,7 @@
             {
                 <li>
                     @item.ItemName
-                    <form asp-controller="Item" asp-action="AddItem" method="post">
+                    <form asp-controller="Item" asp-action="AddItemToOrder" method="post">
                         <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
                         <input type="hidden" name="itemId" value="@item.ItemId" />
                         <input class="quantity" type="number" name="quantity" value="1" min="1" />

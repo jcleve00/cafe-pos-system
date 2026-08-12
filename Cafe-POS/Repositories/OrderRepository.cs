@@ -85,6 +85,9 @@ public class OrderRepository : IOrderRepository
         var order = GetOrderDetails(orderId);
         // Get the subtotal of all the items so far
         order.SubTotal = order.OrderItems.Sum(o => o.ExtendedPrice);
+        order.Tax = order.SubTotal * 0.0875m;
+        order.Tip = order.SubTotal * .2m;
+        order.AmountDue = order.SubTotal + order.Tax + order.Tip;
         _dbContext.SaveChanges();
 
         return order;

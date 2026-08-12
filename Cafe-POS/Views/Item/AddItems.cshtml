@@ -1,4 +1,4 @@
-@model IEnumerable<Cafe_POS.Models.Item>
+@model IEnumerable<IGrouping<Cafe_POS.Models.Category, Cafe_POS.Models.Item>>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,18 +10,23 @@
 <h2>@ViewBag.Title</h2>
 <hr />
 <div class="menu-container">
-    <ul class="menu">
-        @foreach (var item in Model)
-        {
-            <li>
-                @item.ItemName
-                <form asp-controller="Item" asp-action="AddItem" method="post">
-                    <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
-                    <input type="hidden" name="itemId" value="@item.ItemId" />
-                    <input class="quantity" type="number" name="quantity" value="1" min="1" />
-                    <button type="submit">add</button>
-                </form>
-            </li>
-        }
-    </ul>
+    /* looping through the group, first by Category then by item */
+    @foreach (var group in Model){
+        <h3>@group.Key.CategoryName</h3>
+        <ul class="menu">
+        @foreach (var item in group)
+            {
+                <li>
+                    @item.ItemName
+                    <form asp-controller="Item" asp-action="AddItem" method="post">
+                        <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
+                        <input type="hidden" name="itemId" value="@item.ItemId" />
+                        <input class="quantity" type="number" name="quantity" value="1" min="1" />
+                        <button type="submit">add</button>
+                    </form>
+                </li>
+            }
+        </ul>
+    }
+    
 </div>

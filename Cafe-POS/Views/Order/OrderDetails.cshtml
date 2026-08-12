@@ -1,11 +1,12 @@
 @model Cafe_POS.Models.CafeOrder
 
 @{
-    ViewData["Title"] = "Order Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Order Details";
 }
-<div><a asp-controller="Home" asp-action="Index">Back</a></div>
+<div><a class="back-btn" asp-controller="Home" asp-action="Index">Back</a></div>
 
-<h1>@ViewData["Title"]</h1>
+<h2>@ViewBag.Title</h2>
 
 <div>
     <h4>Order #@Model.OrderId</h4>
@@ -13,15 +14,18 @@
     <h4>@Model.Server.FirstName</h4>
     <h4>@Model.OrderDate</h4>
 </div>
-<div>
-    <ul>
+<hr />
+<h4>Items</h4>
+<div class="item-list-container">
+    
+    <ul class="item-list">
          @foreach (var item in Model.OrderItems){
             <li>@item.Quantity - @item.ItemPrice.Item.ItemName</li>
         }
     </ul>
 </div>
-<div>
-    <dl>
+<div class="amount-due-list-container">
+    <dl class="amount-due-list">
         <dt>Subtotal</dt>
         <dd>@Model.SubTotal</dd>
 
@@ -32,11 +36,11 @@
         <dd>@Model.AmountDue</dd>
     </dl>
 </div>
-<div>
-    <a asp-controller="Item" asp-action="AddItems" asp-route-orderId="@Model.OrderId">Add Items To Order</a>
-</div>
-<div>
-    <a asp-controller="Order" asp-action="ProcessPayment">Process Payment</a>
+<hr />
+<div class="details-btns">
+    <a class="add-items-btn" asp-controller="Item" asp-action="AddItems" asp-route-orderId="@Model.OrderId">Add Items To Order</a>
+
+    <a class="process-payment-btn" asp-controller="Order" asp-action="ProcessPayment">Process Payment</a>
 </div>
    
     

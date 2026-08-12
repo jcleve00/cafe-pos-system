@@ -1,17 +1,23 @@
 @model IEnumerable<Cafe_POS.Models.CafeOrder>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+<h2>@ViewBag.Title</h2>
 
-    <h1>Home</h1>
-
-    <a asp-controller="Order" asp-action="SelectServer">Create New Order</a>
-
-    <h2>Active Orders</h2>
-
-    <ul>
+<div class="btn-container">
+    <a class="create-btn" asp-controller="Order" asp-action="SelectServer">Create New Order</a>
+</div>
+<hr />
+<h3>Active Orders</h3>
+<div class="active-orders-container">
+    <ul class="active-orders">
         @foreach (var order in Model)
         {
             <li>
                 Order #@order.OrderId
-                <a asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@order.OrderId">view</a>
+                <a class="view-btn" asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@order.OrderId">view</a>
             </li>
         }
     </ul>
+</div>

@@ -1,24 +1,27 @@
 @model IEnumerable<Cafe_POS.Models.Item>
 
 @{
-    ViewData["Title"] = "Add Items";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Items";
 }
 
-<div><a asp=controller="Order" asp-action="OrderDeatails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
+<div><a class="back-btn" asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
 
-<h1>@ViewData["Title"]</h1>
-
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            @item.ItemName
-            <form asp-controller="Item" asp-action="AddItem" method="post">
-                <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
-                <input type="hidden" name="itemId" value="@item.ItemId" />
-                <input type="number" name="quantity" value="1" min="1" />
-                <button type="submit">add</button>
-            </form>
-        </li>
-    }
-</ul>
+<h2>@ViewBag.Title</h2>
+<hr />
+<div class="menu-container">
+    <ul class="menu">
+        @foreach (var item in Model)
+        {
+            <li>
+                @item.ItemName
+                <form asp-controller="Item" asp-action="AddItem" method="post">
+                    <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
+                    <input type="hidden" name="itemId" value="@item.ItemId" />
+                    <input type="number" name="quantity" value="1" min="1" />
+                    <button type="submit">add</button>
+                </form>
+            </li>
+        }
+    </ul>
+</div>

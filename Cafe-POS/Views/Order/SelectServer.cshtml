@@ -2,22 +2,22 @@
 @model IEnumerable<Cafe_POS.Models.Server>
 
 @{
-    ViewData["Title"] = "Create New Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Select Server";
 }
-<div><a asp-controller="Home" asp-action="Index">Back</a></div>
+<div><a class="back-btn" asp-controller="Home" asp-action="Index">Back</a></div>
 
-<h1>@ViewData["Title"]</h1>
-
-<h2>Active Servers</h2>
-<div>
-    <ul>
+<h2>@ViewBag.Title</h2>
+<hr />
+<h3>Active Servers</h3>
+<div class="active-servers-container">
+    <ul class="active-servers">
         @foreach (var server in Model)
         {
             <li>
                 Server @server.FirstName
-                <a asp-controller="Order" asp-action="CreateNew" asp-route-serverId="@server.ServerId">select</a>
+                <a class="select-btn" asp-controller="Order" asp-action="CreateNew" asp-route-serverId="@server.ServerId">select</a>
             </li>
         }
     </ul>
 </div>
-    

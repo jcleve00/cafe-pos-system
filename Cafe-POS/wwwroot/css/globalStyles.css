@@ -1,0 +1,188 @@
+/*---- Body Styles -----*/
+body {
+    margin: 10px auto;
+    width: 100%;
+    background-color:lightgrey;
+}
+
+/*---- Banner Styles -----*/
+.banner {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 10px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+.banner-text {
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    font-family: sytem-ui, -apple-system, sans-serif;
+}
+
+/*---- Heading Styles -----*/
+
+h2 {
+    text-align: center;
+    font-family: sytem-ui, -apple-system, sans-serif;
+}
+h3 {
+    text-align: center;
+    font-family: sytem-ui, -apple-system, sans-serif;
+}
+h4 {
+    text-align: center;
+    font-family: sytem-ui, -apple-system, sans-serif;
+}
+
+/*---- Button Styles -----*/
+.btn-container{
+    margin: 10px auto;
+    text-align: center;
+}
+.create-btn {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+.view-btn {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+.back-btn {
+    margin-left: 20px;
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+.select-btn {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+.details-btns {
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+.add-items-btn {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+.process-payment-btn {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #1e1b4b, #311042);
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*---- List Styles -----*/
+.active-orders-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+.active-orders {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.active-orders li {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+.active-servers-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+}
+.active-servers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.active-servers li {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+.item-list-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.item-list li{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+
+.amount-due-list-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+.amount-due-list{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px 24px;
+    width:fit-content;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.amount-due-list dt {
+    font-weight: bold;
+    grid-column: 1;
+}
+.amount-due-list dd {
+    margin: 0;
+    grid-column: 2;
+}

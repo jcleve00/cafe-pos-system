@@ -8,9 +8,9 @@
 <div><a class="back-btn" asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
 
 <h2>@ViewBag.Title</h2>
-<hr />
+<hr /> 
 <div class="menu-container">
-    /* looping through the group, first by Category then by item */
+    <!--Looping through the group, first by Category then by item -->
     @foreach (var group in Model){
         <h3>@group.Key.CategoryName</h3>
         <ul class="menu">

@@ -40,7 +40,7 @@
 <div class="details-btns">
     <a class="add-items-btn" asp-controller="Item" asp-action="AddItems" asp-route-orderId="@Model.OrderId">Add Items To Order</a>
 
-    <a class="process-payment-btn" asp-controller="Order" asp-action="ProcessPayment">Process Payment</a>
+    <a class="process-payment-btn" asp-controller="Payment" asp-action="ProcessPayment" asp-route-orderId="@Model.OrderId">Process Payment</a>
 </div>
    
     

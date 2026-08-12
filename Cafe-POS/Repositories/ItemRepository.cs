@@ -41,11 +41,10 @@ public class ItemRepository : IItemRepository
         {
             return 3;
         }
-        else if (hour >= 17 && hour < 20)
+        else
         {
             return 4;
         }
-        return 0;
     }
 
     public IEnumerable<Item> GetAvailableItems(DateTime orderTime)

@@ -20,7 +20,7 @@
     
     <ul class="item-list">
          @foreach (var item in Model.OrderItems){
-            <li>@item.Quantity - @item.ItemPrice.Item.ItemName</li>
+            <li>@item.Quantity - @item.ItemPrice.Item.ItemName - $@item.ExtendedPrice ($@item.ItemPrice.Price each)</li>
         }
     </ul>
 </div>

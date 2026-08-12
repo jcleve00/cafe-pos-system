@@ -21,7 +21,8 @@ public class ItemController : Controller
         ViewBag.OrderId = orderId;
 
         var items = _itemRepository.GetAvailableItems(DateTime.Now);
-        return View(items);
+        var grouped = items.GroupBy(i => i.Category); // Grouping items by category
+        return View(grouped);
     }
 
     //add selected item and quantity to the order

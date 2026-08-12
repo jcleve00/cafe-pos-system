@@ -59,6 +59,7 @@ public class ItemRepository : IItemRepository
                 ip.TimeOfDayId == TimeOfDayId &&
                 ip.StartDate <= orderDate &&
                 (ip.EndDate == null || ip.EndDate >= orderDate)))
+                .Include(c => c.Category) // Added include Category
             .ToList();
     }
 }

@@ -1,23 +1,26 @@
 @model IEnumerable<Cafe_POS.Models.PaymentType>
 
 @{
-    ViewData["Title"] = "Process Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Process Payment";
 }
 
-<div><a asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
+<div><a class="back-btn" asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@ViewBag.OrderId">Back</a></div>
 
-<h1>@ViewData["Title"]</h1>
+<h2>@ViewBag.Title</h2>
 
-<ul>
-    @foreach (var paymentType in Model)
-    {
-        <li>
-            @paymentType.PaymentTypeName
-            <form asp-controller="Payment" asp-action="CompletePayment" method="post">
-                <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
-                <input type="hidden" name="paymentTypeId" value="@paymentType.PaymentTypeId" />
-                <button type="submit">select</button>
-            </form>
-        </li>
-    }
-</ul>
+<div class="payment-list-container">
+    <ul class="payment-list">
+        @foreach (var paymentType in Model)
+        {
+            <li>
+                @paymentType.PaymentTypeName
+                <form asp-controller="Payment" asp-action="CompletePayment" method="post">
+                    <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
+                    <input type="hidden" name="paymentTypeId" value="@paymentType.PaymentTypeId" />
+                    <button type="submit" class="select-btn">select</button>
+                </form>
+            </li>
+        }
+    </ul>
+</div>

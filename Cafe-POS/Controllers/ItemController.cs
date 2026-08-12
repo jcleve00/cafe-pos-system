@@ -27,7 +27,7 @@ public class ItemController : Controller
 
     //add selected item and quantity to the order
     [HttpPost]
-    public IActionResult AddItem(int orderId, int itemId, int quantity)
+    public IActionResult AddItemToOrder(int orderId, int itemId, int quantity)
     {
         _orderRepository.AddItemToOrder(orderId, itemId, quantity );
 
